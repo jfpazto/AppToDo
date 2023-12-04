@@ -1,1 +1,3 @@
-# AppToDo
+# finance_project
+
+A new Flutter project.
