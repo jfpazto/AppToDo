@@ -1,0 +1,10 @@
+^D:\JONATHANPAEZ\MYPROJECT\FINANCE_PROJECT\BUILD\WINDOWS\CMAKEFILES\F58A9AC53152FEF087EACFCECDC2D8A8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/finance_project/windows -BD:/JonathanPaez/MyProject/finance_project/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/JonathanPaez/MyProject/finance_project/build/windows/finance_project.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
