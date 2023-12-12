@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\flutter_window.cpp">
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\flutter_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\main.cpp">
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\utils.cpp">
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\win32_window.cpp">
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\win32_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\flutter\generated_plugin_registrant.cc">
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\generated_plugin_registrant.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\CMakeLists.txt" />
+    <CustomBuild Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\runner\Runner.rc">
+    <ResourceCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\runner\Runner.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{AAEF51AF-79AC-3F1A-85EE-8225B3D09D12}</UniqueIdentifier>
+      <UniqueIdentifier>{1B50A3E4-6027-34F5-B01E-2BA918861399}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

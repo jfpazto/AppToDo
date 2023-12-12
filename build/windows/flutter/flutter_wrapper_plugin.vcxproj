@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{74CC9E2C-18DA-3FD5-8D76-1883944BF2AA}</ProjectGuid>
+    <ProjectGuid>{67FA7F0C-8B56-383F-8A56-B131B82A286C}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -50,22 +50,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">flutter_wrapper_plugin.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">flutter_wrapper_plugin</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\Profile\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\Profile\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">flutter_wrapper_plugin.dir\Profile\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">flutter_wrapper_plugin</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">flutter_wrapper_plugin.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">flutter_wrapper_plugin</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -85,10 +85,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -101,7 +101,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>"4100"</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -121,10 +121,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Profile\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -137,7 +137,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>"4100"</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -157,10 +157,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\include;D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -172,11 +172,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\JonathanPaez\MyProject\finance_project\windows\flutter\CMakeLists.txt">
+    <CustomBuild Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\CMakeLists.txt">
       <StdOutEncoding>UTF-8</StdOutEncoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/JonathanPaez/MyProject/finance_project/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/JonathanPaez/MyProject/Repo/AppToDo/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/finance_project/windows -BD:/JonathanPaez/MyProject/finance_project/build/windows --check-stamp-file D:/JonathanPaez/MyProject/finance_project/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/Repo/AppToDo/windows -BD:/JonathanPaez/MyProject/Repo/AppToDo/build/windows --check-stamp-file D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -184,12 +184,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/JonathanPaez/MyProject/finance_project/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/JonathanPaez/MyProject/Repo/AppToDo/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/finance_project/windows -BD:/JonathanPaez/MyProject/finance_project/build/windows --check-stamp-file D:/JonathanPaez/MyProject/finance_project/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/Repo/AppToDo/windows -BD:/JonathanPaez/MyProject/Repo/AppToDo/build/windows --check-stamp-file D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -197,12 +197,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/JonathanPaez/MyProject/finance_project/windows/flutter/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/JonathanPaez/MyProject/Repo/AppToDo/windows/flutter/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/finance_project/windows -BD:/JonathanPaez/MyProject/finance_project/build/windows --check-stamp-file D:/JonathanPaez/MyProject/finance_project/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/Repo/AppToDo/windows -BD:/JonathanPaez/MyProject/Repo/AppToDo/build/windows --check-stamp-file D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -210,25 +210,25 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc" />
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc" />
-    <ClCompile Include="D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc" />
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc" />
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc" />
+    <ClCompile Include="D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\JonathanPaez\MyProject\finance_project\build\windows\ZERO_CHECK.vcxproj">
-      <Project>{495749FE-E4FE-3C28-8191-F035F71C0CA5}</Project>
+    <ProjectReference Include="D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{85CC874F-C641-3CFD-8CAF-61D64EB8A5DA}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\JonathanPaez\MyProject\finance_project\build\windows\flutter\flutter_assemble.vcxproj">
-      <Project>{2961C6D3-328B-3B2A-A5B3-CB18A99E6DE8}</Project>
+    <ProjectReference Include="D:\JonathanPaez\MyProject\Repo\AppToDo\build\windows\flutter\flutter_assemble.vcxproj">
+      <Project>{188BCA5C-01CA-366C-9E2D-178B52104564}</Project>
       <Name>flutter_assemble</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

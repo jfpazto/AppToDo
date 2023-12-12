@@ -1,4 +1,4 @@
-# Install script for directory: D:/JonathanPaez/MyProject/finance_project/windows/runner
+# Install script for directory: D:/JonathanPaez/MyProject/Repo/AppToDo/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

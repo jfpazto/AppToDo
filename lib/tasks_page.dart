@@ -1,7 +1,17 @@
+import 'package:finance_project/widgets/add_tag_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:finance_project/widgets/tag.dart';
+import 'package:finance_project/widgets/Task.dart';
+import 'package:finance_project/widgets/task_card.dart';
+import 'package:finance_project/widgets/edit_task_dialog.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;
+List<Tag> tags = [
+  Tag(title: 'Tag 1', color: Colors.red, fecha: DateTime.now()),
+  Tag(title: 'Tag 2', color: Colors.blue, fecha: DateTime.now()),
+  // Agrega más tags aquí
+];
 
 class TasksPage extends StatefulWidget {
   @override
@@ -12,15 +22,64 @@ class _TasksPageState extends State<TasksPage> {
   // Aquí puedes definir la lista de tareas
   List<Task> tasks = List.generate(
     4,
-    (index) => Task(title: 'Task $index', color: DEFAULT_TASK_COLOR,fecha: DateTime.now()),
+    (index) => Task(
+        title: 'Task $index', color: DEFAULT_TASK_COLOR, fecha: DateTime.now()),
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Tareas'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color.fromARGB(255, 253, 163, 28), Color.fromARGB(255, 133, 132, 132)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        title: ShaderMask(
+          shaderCallback: (bounds) => RadialGradient(
+            center: Alignment.topLeft,
+            radius: 1.0,
+            colors: <Color>[Colors.blue, Color.fromARGB(255, 236, 235, 235)],
+            tileMode: TileMode.mirror,
+          ).createShader(bounds),
+          child: Text(
+            'Lista de Tareas',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              shadows: <Shadow>[
+                Shadow(
+                  offset: Offset(2.0, 2.0),
+                  blurRadius: 3.0,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                Shadow(
+                  offset: Offset(2.0, 2.0),
+                  blurRadius: 8.0,
+                  color: Color.fromARGB(125, 0, 0, 255),
+                ),
+              ],
+              fontFamily: 'YourCustomFont', // replace with your custom font
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
+          ),
+        ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
@@ -41,6 +100,107 @@ class _TasksPageState extends State<TasksPage> {
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                Navigator.pop(
+                    context); // Esto te llevará a la página anterior, que puede ser tu página de inicio
+              },
+            ),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 100, // You can adjust this value to change the height of the header
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color.fromARGB(255, 253, 163, 28), Color.fromARGB(255, 133, 132, 132)], // Gradient color
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.center,
+                child: ShaderMask(
+                  shaderCallback: (bounds) => RadialGradient(
+                    center: Alignment.topLeft,
+                    radius: 1.0,
+                    colors: <Color>[Colors.blue, Color.fromARGB(255, 236, 235, 235)],
+                    tileMode: TileMode.mirror,
+                  ).createShader(bounds),
+                  child: Text(
+                    'ETIQUETAS',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(2.0, 2.0),
+                          blurRadius: 3.0,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                        Shadow(
+                          offset: Offset(2.0, 2.0),
+                          blurRadius: 8.0,
+                          color: Color.fromARGB(125, 0, 0, 255),
+                        ),
+                      ],
+                      fontFamily: 'YourCustomFont', // replace with your custom font
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 0),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    _addTag(context);
+                  },
+                child: Icon(Icons.add),
+                backgroundColor: Colors.blue,
+                ),
+              ),
+            ),
+            SizedBox(height: 0),
+            Expanded(
+              child: ListView.builder(
+                itemCount: tags.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(tags[index].title),
+                    onTap: () {
+                      _editTag(context, index);
+                    },
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete),
+                      onPressed: () {
+                        _deleteTag(index);
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            // Aquí puedes agregar más widgets si los necesitas
+          ],
+        ),
+      ),
     );
   }
 
@@ -59,194 +219,73 @@ class _TasksPageState extends State<TasksPage> {
       });
     }
   }
-}
 
-class Task {
-  final String title;
-  final Color color;
-  final DateTime fecha;
-  Task({required this.title, required this.color, required this.fecha});
-}
 
-class TaskCard extends StatelessWidget {
-  final Task task;
-  final VoidCallback onTap;
 
-  TaskCard({required this.task, required this.onTap});
+// ...
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Card(
-        color: task.color,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ListTile(
-            title: Text(task .title),
-            trailing: Text(task.fecha.toString()),
-            onTap: onTap,
-          ),                
-        ),
-      ),
-    );
-  }
-}
-
-class EditTaskDialog extends StatefulWidget {
-  final Task initialTask;
-
-  EditTaskDialog({required this.initialTask});
-
-  @override
-  _EditTaskDialogState createState() => _EditTaskDialogState();
-}
-
-class _EditTaskDialogState extends State<EditTaskDialog> {
-  late TextEditingController controller;
-  Color cardColor;
-  DateTime selectedDate = DateTime.now();
-
-  _EditTaskDialogState() : cardColor = DEFAULT_TASK_COLOR;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = TextEditingController(text: widget.initialTask.title);
-    cardColor = widget.initialTask.color;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      title: Row(
-        children: [
-          Expanded(
-            child: Text('Editar Tarea'),
-          ),
-          IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () => _selectColor(context),
-          ),
-        ],
-      ),
-      content: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextFormField(
-              controller: controller,
-              decoration: InputDecoration(
-                labelText: 'Título',
-                border: OutlineInputBorder(),
-              ),
+  Future<void> _editTag(BuildContext context, int index) async {
+    Color pickerColor = tags[index].color;
+    final newColor = await showDialog<Color>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Pick a color!'),
+          content: SingleChildScrollView(
+            child: ColorPicker(
+              pickerColor: pickerColor,
+              onColorChanged: (color) {
+                pickerColor = color;
+              },
+              showLabel: true,
+              pickerAreaHeightPercent: 0.8,
             ),
-            SizedBox(height: 10),
+          ),
+          actions: <Widget>[
             TextButton(
-              onPressed: () => _selectDate(context),
-              child: Text('Fecha: ${selectedDate.toLocal()}'.split(' ')[0]),
+              child: const Text('Got it'),
+              onPressed: () {
+                Navigator.of(context).pop(pickerColor);
+              },
             ),
           ],
-        ),
-      ),
-      actions: [
-        TextButton(
-          child: Text('Cancelar'),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        TextButton(
-          child: Text('Guardar'),
-          style: TextButton.styleFrom(
-            primary: Colors.white,
-            backgroundColor: Colors.blue,
-            onSurface: Colors.grey,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop({
-              'title': controller.text,
-              'color': cardColor,
-              'date': selectedDate,
-            });
-          },
-        ),
-      ],
+        );
+      },
     );
-  }
-
-  Future<void> _selectColor(BuildContext context) async {
-    final color = await showDialog<Color>(
-      context: context,
-      builder: (context) => ColorPickerDialog(initialColor: cardColor),
-    );
-    if (color != null) {
+    if (newColor != null) {
       setState(() {
-        cardColor = color;
+        tags[index] = Tag(
+          title: tags[index].title,
+          color: newColor,
+          fecha: tags[index].fecha,
+        );
       });
     }
   }
 
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
+  Future<void> _addTag(BuildContext context) async {
+    final result = await showDialog<Map>(
       context: context,
-      initialDate: selectedDate,
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2025),
+      builder: (context) => AddTagDialog(
+          initialTask: Tag(
+              title: 'Etiqueta',
+              color: DEFAULT_TASK_COLOR,
+              fecha: DateTime.now())),
     );
-    if (picked != null && picked != selectedDate)
+    if (result != null) {
       setState(() {
-        selectedDate = picked;
+        tags.add(Tag(
+          title: result['title'] as String,
+          color: result['color'] as Color? ?? Colors.transparent,
+          fecha: result['date'] as DateTime,
+        ));
       });
-  }
-}
-
-class ColorPickerDialog extends StatefulWidget {
-  final Color initialColor;
-
-  ColorPickerDialog({required this.initialColor});
-
-  @override
-  _ColorPickerDialogState createState() => _ColorPickerDialogState();
-}
-
-class _ColorPickerDialogState extends State<ColorPickerDialog> {
-  late Color pickerColor;
-
-  @override
-  void initState() {
-    super.initState();
-    pickerColor = widget.initialColor;
+    }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Selecciona un color'),
-      content: SingleChildScrollView(
-        child: ColorPicker(
-          pickerColor: pickerColor,
-          onColorChanged: (Color color) {
-            setState(() {
-              pickerColor = color;
-            });
-          },
-          showLabel: true,
-          pickerAreaHeightPercent: 0.8,
-        ),
-      ),
-      actions: <Widget>[
-        TextButton(
-          child: const Text('Aceptar'),
-          onPressed: () {
-            Navigator.of(context).pop(pickerColor);
-          },
-        ),
-      ],
-    );
+  void _deleteTag(int index) {
+    setState(() {
+      tags.removeAt(index);
+    });
   }
 }

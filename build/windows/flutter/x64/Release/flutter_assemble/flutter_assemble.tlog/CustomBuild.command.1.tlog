@@ -1,6 +1,6 @@
-^D:\JONATHANPAEZ\MYPROJECT\FINANCE_PROJECT\BUILD\WINDOWS\CMAKEFILES\DF79E968D92CDFAA3FB6EBC0218DB85A\FLUTTER_WINDOWS.DLL.RULE
+^D:\JONATHANPAEZ\MYPROJECT\REPO\APPTODO\BUILD\WINDOWS\CMAKEFILES\B9A362DC583982904AD811648C84E48D\FLUTTER_WINDOWS.DLL.RULE
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\Jonathan-PC\flutter PROJECT_DIR=D:\JonathanPaez\MyProject\finance_project FLUTTER_ROOT=C:\Users\Jonathan-PC\flutter FLUTTER_EPHEMERAL_DIR=D:\JonathanPaez\MyProject\finance_project\windows\flutter\ephemeral PROJECT_DIR=D:\JonathanPaez\MyProject\finance_project FLUTTER_TARGET=lib\main.dart DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=true PACKAGE_CONFIG=D:\JonathanPaez\MyProject\finance_project\.dart_tool\package_config.json C:/Users/Jonathan-PC/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\Jonathan-PC\flutter PROJECT_DIR=D:\JonathanPaez\MyProject\Repo\AppToDo FLUTTER_ROOT=C:\Users\Jonathan-PC\flutter FLUTTER_EPHEMERAL_DIR=D:\JonathanPaez\MyProject\Repo\AppToDo\windows\flutter\ephemeral PROJECT_DIR=D:\JonathanPaez\MyProject\Repo\AppToDo FLUTTER_TARGET=lib\main.dart DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=true PACKAGE_CONFIG=D:\JonathanPaez\MyProject\Repo\AppToDo\.dart_tool\package_config.json C:/Users/Jonathan-PC/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,7 +8,7 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^D:\JONATHANPAEZ\MYPROJECT\FINANCE_PROJECT\BUILD\WINDOWS\CMAKEFILES\4BFDEA6D5C76A41ECFE5733490A8C098\FLUTTER_ASSEMBLE.RULE
+^D:\JONATHANPAEZ\MYPROJECT\REPO\APPTODO\BUILD\WINDOWS\CMAKEFILES\4A905D51C84601AF11EC3DC19935F248\FLUTTER_ASSEMBLE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -16,9 +16,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^D:\JONATHANPAEZ\MYPROJECT\FINANCE_PROJECT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+^D:\JONATHANPAEZ\MYPROJECT\REPO\APPTODO\WINDOWS\FLUTTER\CMAKELISTS.TXT
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/finance_project/windows -BD:/JonathanPaez/MyProject/finance_project/build/windows --check-stamp-file D:/JonathanPaez/MyProject/finance_project/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/JonathanPaez/MyProject/Repo/AppToDo/windows -BD:/JonathanPaez/MyProject/Repo/AppToDo/build/windows --check-stamp-file D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
