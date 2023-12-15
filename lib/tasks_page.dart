@@ -7,11 +7,7 @@ import 'package:finance_project/widgets/edit_task_dialog.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;
-List<Tag> tags = [
-  Tag(title: 'Tag 1', color: Colors.red, fecha: DateTime.now()),
-  Tag(title: 'Tag 2', color: Colors.blue, fecha: DateTime.now()),
-  // Agrega más tags aquí
-];
+
 
 class TasksPage extends StatefulWidget {
   @override
@@ -25,7 +21,11 @@ class _TasksPageState extends State<TasksPage> {
     (index) => Task(
         title: 'Task $index', color: DEFAULT_TASK_COLOR, fecha: DateTime.now()),
   );
-
+  List<Tag> tags = [
+    Tag(title: 'Tag 1', color: Colors.red, fecha: DateTime.now()),
+    Tag(title: 'Tag 2', color: Colors.blue, fecha: DateTime.now()),
+    // Agrega más tags aquí
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -170,7 +170,7 @@ class _TasksPageState extends State<TasksPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
                   onPressed: () {
-                    _addTag(context);
+                    _addTag();
                   },
                 child: Icon(Icons.add),
                 backgroundColor: Colors.blue,
@@ -182,16 +182,19 @@ class _TasksPageState extends State<TasksPage> {
               child: ListView.builder(
                 itemCount: tags.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(tags[index].title),
-                    onTap: () {
-                      _editTag(context, index);
-                    },
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () {
-                        _deleteTag(index);
+                  return Container(
+                    color: tags[index].color, // Utiliza el color de la etiqueta
+                    child: ListTile(
+                      title: Text(tags[index].title, style: TextStyle(color: Colors.white)), // Cambia el color del texto a blanco para que sea visible
+                      onTap: () {
+                        _editTag(context, index);
                       },
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete, color: Colors.white), // Cambia el color del icono a blanco para que sea visible
+                        onPressed: () {
+                          _deleteTag(index);
+                        },
+                      ),
                     ),
                   );
                 },
@@ -263,24 +266,41 @@ class _TasksPageState extends State<TasksPage> {
     }
   }
 
-  Future<void> _addTag(BuildContext context) async {
-    final result = await showDialog<Map>(
+  void _addTag() async {
+    Color pickerColor = DEFAULT_TASK_COLOR;
+    Color newColor = await showDialog(
       context: context,
-      builder: (context) => AddTagDialog(
-          initialTask: Tag(
-              title: 'Etiqueta',
-              color: DEFAULT_TASK_COLOR,
-              fecha: DateTime.now())),
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Pick a color!'),
+          content: SingleChildScrollView(
+            child: ColorPicker(
+              pickerColor: pickerColor,
+              onColorChanged: (Color color) => pickerColor = color,
+              showLabel: true,
+              pickerAreaHeightPercent: 0.8,
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Got it'),
+              onPressed: () {
+                Navigator.of(context).pop(pickerColor);
+              },
+            ),
+          ],
+        );
+      },
     );
-    if (result != null) {
-      setState(() {
-        tags.add(Tag(
-          title: result['title'] as String,
-          color: result['color'] as Color? ?? Colors.transparent,
-          fecha: result['date'] as DateTime,
-        ));
-      });
-    }
+
+    setState(() {
+      tags.add(Tag(
+        title: 'Etiqueta',
+        color: newColor,
+        fecha: DateTime.now(),
+      ));
+    });
+
   }
 
   void _deleteTag(int index) {

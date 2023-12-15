@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Tag {
-  final String title;
+class Tag extends ChangeNotifier {
+  String title;
   Color color;
-  final DateTime fecha;
+  DateTime fecha;
+
   Tag({required this.title, required this.color, required this.fecha});
 
   void updateColor(Color newColor) {
-    this.color = newColor;
+    color = newColor;
+    notifyListeners();  // Notifica a los widgets que están escuchando este Tag
   }
 }
