@@ -5,14 +5,14 @@ import 'package:device_preview/device_preview.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled:true,
+      enabled:false,//Cambiar a true para ver el preview o false para desactivar
       builder: (context) => MyApp(),
     ),
   );
   
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {//Se usa el StatelessWidget porque no se va a cambiar el estado de la app
   const MyApp({super.key});
 
   @override
