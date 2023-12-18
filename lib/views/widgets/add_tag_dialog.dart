@@ -1,22 +1,22 @@
-import 'package:finance_project/tasks_page.dart';
+import 'package:finance_project/views/tasks_page.dart';
+import 'package:finance_project/views/widgets/tag.dart';
 import 'package:flutter/material.dart';
-import 'Task.dart';
 import 'color_picker_dialog.dart';
 
-class EditTaskDialog extends StatefulWidget {
-  final Task initialTask;
-  EditTaskDialog({required this.initialTask});
+class AddTagDialog extends StatefulWidget {
+  final Tag initialTask;
+  AddTagDialog({required this.initialTask});
 
   @override
-  _EditTaskDialogState createState() => _EditTaskDialogState();
+  _AddTagDialogState createState() => _AddTagDialogState();
 }
 
-class _EditTaskDialogState extends State<EditTaskDialog> {
+class _AddTagDialogState extends State<AddTagDialog> {
   late TextEditingController controller;
   Color cardColor;
   DateTime selectedDate = DateTime.now();
 
-  _EditTaskDialogState() : cardColor = DEFAULT_TASK_COLOR;
+  _AddTagDialogState() : cardColor = DEFAULT_TASK_COLOR;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
       title: Row(
         children: [
           Expanded(
-            child: Text('Editar Tarea'),
+            child: Text('Agregar Etiqueta'),
           ),
           IconButton(
             icon: Icon(Icons.edit),

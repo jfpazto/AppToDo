@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'profile_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'tasks_page.dart';
 class LoginPage extends StatefulWidget { //Clase que hereda de StatefulWidget

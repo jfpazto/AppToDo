@@ -1,9 +1,8 @@
-import 'package:finance_project/widgets/add_tag_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:finance_project/widgets/tag.dart';
-import 'package:finance_project/widgets/Task.dart';
-import 'package:finance_project/widgets/task_card.dart';
-import 'package:finance_project/widgets/edit_task_dialog.dart';
+import 'package:finance_project/views/widgets/tag.dart';
+import 'package:finance_project/views/widgets/Task.dart';
+import 'package:finance_project/views/widgets/task_card.dart';
+import 'package:finance_project/views/widgets/edit_task_dialog.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;
