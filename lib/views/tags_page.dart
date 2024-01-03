@@ -45,7 +45,7 @@ class _TagsPageState extends State<TagsPage> {
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Color.fromARGB(255, 192, 192, 192),
           shadows: <Shadow>[
             Shadow(
               offset: Offset(2.0, 2.0),
@@ -146,7 +146,6 @@ class _TagsPageState extends State<TagsPage> {
                           color: tag.color,
                           child: ListTile(
                             leading: Container(
- // Agrega un margen a la derecha para separar el círculo del texto
                               width: 10, // Ajusta este valor para cambiar el tamaño del círculo
                               height: 10, // Ajusta este valor para cambiar el tamaño del círculo
                               decoration: BoxDecoration(

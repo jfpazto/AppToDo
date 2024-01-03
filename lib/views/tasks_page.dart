@@ -3,7 +3,6 @@ import 'package:finance_project/models/tag.dart';
 import 'package:finance_project/models/Task.dart';
 import 'package:finance_project/views/widgets/task_card.dart';
 import 'package:finance_project/views/widgets/edit_task_dialog.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:finance_project/views/tags_page.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;//Constante para el color de las tareas
@@ -165,90 +164,5 @@ class _TasksPageState extends State<TasksPage> {
         );
       });
     }
-  }
-
-  //Metodo para eliminar la etiqueta
-  void _deleteTag(int index) {
-    setState(() {
-      tags.removeAt(index);
-    });
-  }
-
-  //Metodo para editar la etiqueta
-  Future<void> _editTag(BuildContext context, int index) async {
-    Color pickerColor = tags[index].color;
-    final newColor = await showDialog<Color>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Pick a color!'),
-          content: SingleChildScrollView(
-            child: ColorPicker(
-              pickerColor: pickerColor,
-              onColorChanged: (color) {
-                pickerColor = color;
-              },
-              showLabel: true,
-              pickerAreaHeightPercent: 0.8,
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Got it'),
-              onPressed: () {
-                Navigator.of(context).pop(pickerColor);
-              },
-            ),
-          ],
-        );
-      },
-    );
-    if (newColor != null) {
-      setState(() {
-        tags[index] = TagDto(
-          title: tags[index].title,
-          color: newColor,
-          fecha: tags[index].fecha,
-        );
-      });
-    }
-  }
-
-  //Metodo para agregar una etiqueta
-  void _addTag() async {
-    Color pickerColor = DEFAULT_TASK_COLOR;
-    Color newColor = await showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Pick a color!'),
-          content: SingleChildScrollView(
-            child: ColorPicker(
-              pickerColor: pickerColor,
-              onColorChanged: (Color color) => pickerColor = color,
-              showLabel: true,
-              pickerAreaHeightPercent: 0.8,
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Got it'),
-              onPressed: () {
-                Navigator.of(context).pop(pickerColor);
-              },
-            ),
-          ],
-        );
-      },
-    );
-
-    setState(() {
-      tags.add(TagDto(
-        title: 'Etiqueta',
-        color: newColor,
-        fecha: DateTime.now(),
-      ));
-    });
-
   }
 }
