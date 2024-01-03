@@ -3,6 +3,7 @@ import 'package:finance_project/models/tag.dart';
 import 'package:flutter/material.dart';
 import 'package:finance_project/views/widgets/add_tag_dialog.dart';
 import 'package:provider/provider.dart';
+import 'package:finance_project/views/widgets/triangle_tag.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;
 
@@ -138,19 +139,45 @@ class _TagsPageState extends State<TagsPage> {
                   itemCount: tagDto.allTags.length,
                   itemBuilder: (context, index) {
                     final tag = tagDto.allTags[index];
-                    return Container(
-                      color: tag.color,
-                      child: ListTile(
-                        title: Text(tag.title,
-                            style: TextStyle(color: Colors.white)),
-                        onTap: () {
-                          editTag(context, index);
-                        },
-                        trailing: IconButton(
-                          icon: Icon(Icons.delete, color: Colors.white),
-                          onPressed: () {},
+                    return Stack(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 20),
+                          color: tag.color,
+                          child: ListTile(
+                            leading: Container(
+ // Agrega un margen a la derecha para separar el círculo del texto
+                              width: 10, // Ajusta este valor para cambiar el tamaño del círculo
+                              height: 10, // Ajusta este valor para cambiar el tamaño del círculo
+                              decoration: BoxDecoration(
+                                color: Colors.white, // Cambia esto al color de tu página
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            title: Text(tag.title,
+                                style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              editTag(context, index);
+                            },
+                            trailing: IconButton(
+                              icon: Icon(Icons.delete, color: Colors.white),
+                              onPressed: () {},
+                            ),
+                          ),
                         ),
-                      ),
+                        Positioned(
+                          top: 0,
+                          bottom: 0,
+                          right: 0,
+                          child: CustomPaint(
+                            painter: Triangle(tag.color),
+                            child: SizedBox(
+                              width: 20,
+                              height: double.infinity,
+                            ),
+                          ),
+                        ),
+                      ],
                     );
                   },
                 );

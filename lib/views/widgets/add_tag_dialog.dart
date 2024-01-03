@@ -50,7 +50,7 @@ class _AddTagDialogState extends State<AddTagDialog> {
                 shape: BoxShape.circle,
               ),
             ),
-          )
+          ),
         ],
       ),
       content: Padding(
