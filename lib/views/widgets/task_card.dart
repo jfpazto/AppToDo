@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Task.dart';
+import 'package:finance_project/models/Task.dart';
 
 class TaskCard extends StatelessWidget {
-  final Task task;
+  final TaskDto task;
   final VoidCallback onTap;
 
   TaskCard({required this.task, required this.onTap});

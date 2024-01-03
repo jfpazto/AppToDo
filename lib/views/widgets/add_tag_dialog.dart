@@ -1,11 +1,14 @@
 import 'package:finance_project/views/tasks_page.dart';
-import 'package:finance_project/views/widgets/tag.dart';
+import 'package:finance_project/models/tag.dart';
 import 'package:flutter/material.dart';
 import 'color_picker_dialog.dart';
+import 'package:provider/provider.dart';
+
 
 class AddTagDialog extends StatefulWidget {
-  final Tag initialTask;
-  AddTagDialog({required this.initialTask});
+  final TagDto initialTask;
+  final List<TagDto> tags;
+  AddTagDialog({Key? key, required this.initialTask, required this.tags}) : super(key: key);
 
   @override
   _AddTagDialogState createState() => _AddTagDialogState();
@@ -36,10 +39,18 @@ class _AddTagDialogState extends State<AddTagDialog> {
           Expanded(
             child: Text('Agregar Etiqueta'),
           ),
-          IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () => _selectColor(context),
-          ),
+          GestureDetector(
+            onTap: () => _selectColor(context),
+            child: Container(
+              width: 24,
+              height: 24,
+              margin: EdgeInsets.only(left: 8),
+              decoration: BoxDecoration(
+                color: cardColor,
+                shape: BoxShape.circle,
+              ),
+            ),
+          )
         ],
       ),
       content: Padding(
@@ -55,9 +66,14 @@ class _AddTagDialogState extends State<AddTagDialog> {
               ),
             ),
             SizedBox(height: 10),
-            TextButton(
-              onPressed: () => _selectDate(context),
-              child: Text('Fecha: ${selectedDate.toLocal()}'.split(' ')[0]),
+            TextFormField(
+              controller: TextEditingController()..text = '${selectedDate.toLocal()}'.split(' ')[0],
+              decoration: InputDecoration(
+                labelText: 'Fecha',
+                border: OutlineInputBorder(),
+              ),
+              onTap: () => _selectDate(context),
+              readOnly: true,
             ),
           ],
         ),
@@ -77,11 +93,13 @@ class _AddTagDialogState extends State<AddTagDialog> {
             onSurface: Colors.grey,
           ),
           onPressed: () {
-            Navigator.of(context).pop({
-              'title': controller.text,
-              'color': cardColor,
-              'date': selectedDate,
-            });
+            final newTag = TagDto(
+              title: controller.text,
+              color: cardColor,
+              fecha: selectedDate,
+            );
+            Provider.of<TagDto>(context, listen: false).addTag(newTag);
+            Navigator.of(context).pop();
           },
         ),
       ],

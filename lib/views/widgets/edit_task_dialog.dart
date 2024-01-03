@@ -1,10 +1,10 @@
 import 'package:finance_project/views/tasks_page.dart';
 import 'package:flutter/material.dart';
-import 'Task.dart';
+import 'package:finance_project/models/Task.dart';
 import 'color_picker_dialog.dart';
 
 class EditTaskDialog extends StatefulWidget {
-  final Task initialTask;
+  final TaskDto initialTask;
   EditTaskDialog({required this.initialTask});
 
   @override

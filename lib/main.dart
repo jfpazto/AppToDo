@@ -1,11 +1,16 @@
+import 'package:finance_project/models/tag.dart';
 import 'package:finance_project/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:provider/provider.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled:false,//Cambiar a true para ver el preview o false para desactivar
-      builder: (context) => MyApp(),
+      enabled: false, //Cambiar a true para ver el preview o false para desactivar
+      builder: (context) => ChangeNotifierProvider(
+        create: (context) => TagDto(),
+        child: MyApp(),
+      ),
     ),
   );
   
