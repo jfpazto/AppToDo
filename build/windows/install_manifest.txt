@@ -1,0 +1,11 @@
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/icudtl.dat
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/flutter_windows.dll
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/AssetManifest.json
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/FontManifest.json
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/NOTICES.Z
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/flutter_assets/shaders/ink_sparkle.frag
+D:/JonathanPaez/MyProject/Repo/AppToDo/build/windows/runner/Release/data/app.so
