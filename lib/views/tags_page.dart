@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:finance_project/views/widgets/add_tag_dialog.dart';
 import 'package:provider/provider.dart';
 import 'package:finance_project/views/widgets/triangle_tag.dart';
+import 'package:finance_project/views/widgets/edit_tag_dialog.dart';
+import 'package:finance_project/views/widgets/delete_tag_dialog.dart';
 
 const DEFAULT_TASK_COLOR = Colors.yellow;
 
@@ -19,7 +21,6 @@ class _TagsPageState extends State<TagsPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     tags = Provider.of<TagDto>(context, listen: false).allTags;
-    Provider.of<TagDto>(context, listen: false).addTag(TagDto(title: 'Tag 2', color: Colors.blue, fecha: DateTime.now()));
   }
   LinearGradient _buildGradient() {
     return LinearGradient(
@@ -64,34 +65,6 @@ class _TagsPageState extends State<TagsPage> {
     );
   }
 
-  void editTag(BuildContext context, int index) {
-    TextEditingController _textFieldController = TextEditingController();
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Editar etiquetas'),
-          content: TextField(
-            onChanged: (value) {
-              Provider.of<TagDto>(context, listen: false).updateTag(index, value);
-            },
-            controller: _textFieldController,
-            decoration: InputDecoration(hintText: "Etiqueta"),
-          ),
-          actions: <Widget>[
-            // Tus acciones aquí
-          ],
-        );
-      },
-    );
-  }
-
-  void addTag(TagDto newTag) {
-    setState(() {
-      tags.add(newTag);
-    });
-  }
 
   @override
   Widget build(context) {
@@ -156,11 +129,29 @@ class _TagsPageState extends State<TagsPage> {
                             title: Text(tag.title,
                                 style: TextStyle(color: Colors.white)),
                             onTap: () {
-                              editTag(context, index);
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return EditTagDialog(
+                                    index: index,
+                                    initialTitle: tags[index].title,
+                                    initialColor: tags[index].color,
+                                    updateTag: Provider.of<TagDto>(context, listen: false).updateTag,
+                                  );
+                                },
+                              );
                             },
                             trailing: IconButton(
                               icon: Icon(Icons.delete, color: Colors.white),
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => DeleteTagDialog(
+                                    index: index, 
+                                    deleteTag: Provider.of<TagDto>(context, listen: false).deleteTag,
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),
